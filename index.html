@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .navbar {
+            background-color: #c7c5e6;
+            height: 80px;
+            width: 98%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            z-index: 1000;
+            top:0;
+            right: 0;
+        }
+
+        .navbar img {
+            height: 60px;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar li {
+            margin: 0 10px;
+        }
+
+        .navbar li a {
+            text-decoration: none;
+            color: #0a0909;
+            transition: color 0.3s ease;
+        }
+
+        .navbar li a:hover {
+            color: #ffd700;
+        }
+
+        .hero {
+            background-image: url(https://t3.ftcdn.net/jpg/08/12/12/48/240_F_812124846_RKt7Ijyk8NJLyPzxjY6TDJfpBxxhdZhB.jpg) ;
+            background-position: center;
+            background-size: cover;
+            height: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            text-align: center;
+        }
+
+
+        .about {
+  display: flex;
+  align-items: center;
+  padding: 80px 0;
+}
+
+.about-content {
+  flex: 1;
+  max-width: 600px;
+  padding-right: 50px;
+  color: #161515;
+  margin-left: 5%;
+  
+  
+}
+
+.about h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.about-image {
+  max-width: 50%;
+  margin-right: 5%;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: 400px;
+  border-radius: 10px;
+}
+
+.dark-theme {
+  background-color: #fccbe9;
+}
+    
+
+        .content {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #222020;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+       
+         .footer {
+                background-color: #000000ff;
+               width: 100%;
+              min-height: 270px;
+              padding: 3rem 1rem;
+              color: #ffffff;
+            }
+
+.container-footer {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.col-footer {
+    width: 25%;
+    padding: 0 1rem;
+    margin-bottom: 30px;
+}
+
+.col-footer h3 {
+    color: #ffcc00;
+    margin-bottom: 1rem;
+}
+
+.col-footer p, .col-footer ul {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.col-footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.col-footer ul li {
+    margin-bottom: 8px;
+}
+
+.col-footer a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.col-footer a:hover {
+    color: #ffd700;
+}
+
+
+
+
+        .product-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    }
+
+.product {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product img {
+    width: 20%; /* Adjust as needed */
+    border-radius: 5px;
+    margin-right: 20px; /* Add some space between the image and description */
+}
+
+.product-description {
+    width: calc(70% - 80px); /* Adjust as needed */
+}
+
+.product-description h2 {
+    color: #333333;
+    margin-top: 0;
+}
+
+.product-description p {
+    color: #666666;
+    line-height: 1.6;
+}
+
+.book-now {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.book-now:hover {
+    background-color: #0056b3;
+}
+
+  
+.contact {
+  background-color:#222020;
+  padding: 80px 0;
+  text-align: center;
+  color: #fff;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.info-item {
+  margin: 0 20px;
+  text-align: center;
+}
+
+.info-item i {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  display: inline-block;
+  background-color: #74d66c;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #94e4ac;
+}
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1720px-Apple_logo_black.svg.png" alt="Apple Logo">
+        <ul>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#services">SERVICES</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+            <li><input placeholder="search"></li>
+        </ul>
+    </div>
+
+
+<div class="hero" id="home">
+    <div class="content">
+        <h1>Apple Inc</h1>
+        <h2> American computer and consumer<br> electronics company</h2>
+        <p>Designs, manufactures, and markets smartphones, tablets, personal computers, and wearable devices.</p>
+        <p>Apple Inc., American manufacturer of personal computers, smartphones, tablet computers, computer peripherals, and computer software and one of the most recognizable brands in the world. It was the first successful personal computer company and the popularizer of the graphical user interface.</p>
+    </div>
+</div>
+
+<section class="about dark-theme">
+    <div class="about-content" id="about">
+      <h2>About Apple Company</h2>
+      <p>Apple Inc. is an American multinational technology company that revolutionized the technology sector through its innovation of computer software, personal computers, mobile tablets, smartphones, and computer peripherals.</p>
+      <p>was founded on April 1, 1976, by college dropouts Steve Jobs and Steve Wozniak, who brought to the new company a vision of changing the way people viewed computers. Jobs and Wozniak wanted to make computers small enough for people to have them in their homes or offices</p>
+      <a href="#menu" class="btn">Explore Our Menu</a>
+    </div>
+    <div class="about-image" style="padding-left:250px;">
+      <img src="https://img.freepik.com/free-photo/modern-office-desk-composition_23-2147915790.jpg?t=st=1716964962~exp=1716968562~hmac=a04c28fa8af3f5de062c164edef841940ac0bebadc72f7a1a624044cb4e6ca96&w=900" alt="About Image">
+    </div>
+  </section>
+
+<div class="container">
+    <div class="card">
+        <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQF2dR4258GGO_qQfqpY_e5KC2GVd9aBjEoUm57zqVrc03MniZyPh4mVaAHtG7xw_BpWLCFQoYTE9IvyX2lUx60x3FCcoef3LNKm2jPLHjRkH3gh-cHBBL3&usqp=CAE">
+        <h3>Apple iPhone 15 Pro Max</h3>
+        <h3> ₹1,29,999 </h3>
+        <p>17.02 cm (6.7 inch) Super Retina XDR Display<br>
+        48MP + 12MP + 12MP | 12MP Front Camera<br>
+        A17 Pro Chip, 6 Core Processor Processor<br>
+        Color: Natural Titanium</p>
+        <button>Click here</button>
+    </div>
+
+    <div class="card">
+        <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQTFl3WPS-_PcqqPl4SzClPuE6ysMInCKjPIZ3QYp4Flg_1_uxx_jiknBVaDRLvfqZ15W2EFDZ-ycz_VyTNzuZ7QrHW-sRkfY7NKd57YZpT_Gk_rgMqfytd&usqp=CAE">
+        <h3>Apple iPhone 15 Pro  </h3>
+        <h3> ₹99,999 </h3>
+        <p>17.02 cm (6.7 inch) Super Retina XDR Display<br>
+        48MP + 12MP + 12MP | 12MP Front Camera<br>
+        A17 Pro Chip, 6 Core Processor Processor<br>
+        Color: White</p>
+        <button>click here</button>
+    </div>
+
+    <div class="card">
+        <img src="https://img.freepik.com/premium-photo/iphone-15-purple_902521-6.jpg?w=740">
+        <h3>Apple iPhone 14</h3>
+        <h3> ₹1,79,999 </h3>
+        <p>15.49 cm (6.1 inch) Super Retina XDR Display<br>
+        48MP + 12MP + 12MP | 12MP Front Camera<br>
+        A16 Bionic Chip, 6 Core Processor Processor<br>
+        Color: Black</p>
+        <button>Click here</button>
+    </div>
+
+    <div class="product-container">
+        <div class="product">
+            <img src="https://img.freepik.com/premium-psd/realistic-phone-mockup-premium-psd_456399-179.jpg" alt="Product Image">
+            <div class="product-description">
+                <h2>I Phone 12 pro</h2>
+                 <p>The iPhone 12 Pro uses Apple's six-core A14 Bionic processor, which contains a 16-core neural engine. It has three internal storage options: 128, 256, and 512 GB. The iPhone 12 Pro has an IP68 water and dust-resistant rating along with dirt and grime, and is water-resistant up to six meters (20 feet) for 30 minutes.</p>
+                 <button class="book-now">Book Now</button>
+                </div>
+        </div>
+        <div class="product">
+            <img src="https://img.freepik.com/premium-photo/introducing-futuristic-iphone-14-pro-mockup-set-stunning-ar-32-experience-from-antalya-turk_983420-244456.jpg?w=900" alt="Product Image">
+            <div class="product-description">
+                <h2> I Phone 13 pro max</h2>
+                <p>This means you can connect to 5G on your iPhone 14, iPhone 14 Plus, iPhone 14 Pro, iPhone 14 Pro Max, iPhone SE (2022), iPhone 13, iPhone 13 Pro, iPhone 13 Pro Max, iPhone 13 Mini, iPhone 12, iPhone 12 Mini, iPhone 12 Pro along with iPhone 12 Pro Max.</p>
+                <button class="book-now">Book Now</button>
+            </div>
+        </div>
+        <!-- Add more products here -->
+    </div>
+    <!-- Add more cards here for other products -->
+     
+    <div class="product-container">
+        <div class="product">
+            <img src="https://img.freepik.com/premium-photo/modern-exclusive-laptop-image-generated-ai_644690-2855.jpg?w=900" alt="Product Image">
+            <div class="product-description">
+                <h2>Apple MacBook Air 13-Inch (2024,M3) </h2>
+                 <p>In 2024, if you are looking to buy a MacBook affordably, look no further than the MacBook Air M2. It features Apple's current design, 14 hours of battery life, solid performance, a comfortable keyboard, and the always-popular MagSafe charging</p>
+                 <button class="book-now">Book Now</button>
+                </div>
+        </div>
+        <div class="product">
+            <img src="https://img.freepik.com/free-photo/closeup-shot-open-laptop-dark-surface-work-from-home-concept_181624-61063.jpg?t=st=1716885378~exp=1716888978~hmac=34d4bddddea1c6e15118275e46f9dc4bea07164a3a9e0eb8780470b6b4704158&w=900" alt="Product Image">
+            <div class="product-description">
+                <h2>Apple MacBook Air 15-Inch (2024, M3)</h2>
+                <p>TechRadar Verdict. The Apple MacBook Air 13-inch (M3) offers improved performance, a slightly tweaked design to prevent fingerprints spoiling the look, and lower price of entry compared to the previous model.</p>
+                <button class="book-now">Book Now</button>
+            </div>
+        </div>
+        <!-- Add more products here -->
+    </div>
+    <!-- Add more cards here for other products -->
+
+</div>
+
+<section class="contact" id="contact">
+    <div class="contact-container">
+      <h2>Contact Us</h2>
+      <div class="contact-info">
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>visakhapatnam,India</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-phone-alt"></i>
+          <p>+91 970 509 6326</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <p>info@apple.com</p>
+        </div>
+      </div>
+      <form class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+<footer class="footer" id="services">
+    <div class="container-footer">
+        <div class="col-footer company">
+            <img src="images/logo.png" alt="" class="logo">
+            <p>
+                What can be labeled as Apple Services transactions
+                Music, movies, TV shows, stickers, books, and app purchases (from the iTunes Store, App Store, and Book Store).
+                These are billed at the time of purchase. They can also include in-app purchases, pre-ordered music or movies, and subscriptions that automatically renew.
+            </p>
+            <div class="social" style="margin-top: 20px;">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <div class="col-footer services">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="#">Transportation</a></li>
+                <li><a href="#">Apple Repair</a></li>
+                <li><a href="#">Product Service and Repair Information</a></li>
+                <li><a href="#">Hardware Warranties</a></li>
+                <li><a href="#">AppleCare Products</a></li>
+                <li><a href="#">Complimentary Support</a></li>
+            </ul>
+        </div>
+
+        <div class="col-footer useful-links">
+            <h3>Resources</h3>
+            <ul>
+                <li><a href="#">My Support</a></li>
+                <li><a href="#">Product Documentation</a></li>
+                <li><a href="#">Apple Support Videos</a></li>
+                <li><a href="#">Accessibility</a></li>
+            </ul>
+        </div>
+</footer>
+
+</body>
+</html>
